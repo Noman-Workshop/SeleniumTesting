@@ -33,48 +33,48 @@ public class Task1Test {
 	}
 	
 	@Test
-	void testTitle() {
+	void formTest() {
 		fillUpForm();
 		testValues();
 	}
 	
 	private static void testValues() {
-		WebElement username = driver.findElement(org.openqa.selenium.By.id("_valueusername"));
+		WebElement username = driver.findElement(By.id("_valueusername"));
 		Assertions.assertEquals(data.username, username.getText());
 		
-		WebElement password = driver.findElement(org.openqa.selenium.By.id("_valuepassword"));
+		WebElement password = driver.findElement(By.id("_valuepassword"));
 		Assertions.assertEquals(data.password, password.getText());
 		
-		WebElement comments = driver.findElement(org.openqa.selenium.By.id("_valuecomments"));
+		WebElement comments = driver.findElement(By.id("_valuecomments"));
 		Assertions.assertEquals(data.comments, comments.getText());
 		
-		WebElement checkbox = driver.findElement(org.openqa.selenium.By.id("_valuecheckboxes0"));
+		WebElement checkbox = driver.findElement(By.id("_valuecheckboxes0"));
 		Assertions.assertEquals(data.checkBox, checkbox.getText());
 		
-		WebElement radio = driver.findElement(org.openqa.selenium.By.id("_valueradioval"));
+		WebElement radio = driver.findElement(By.id("_valueradioval"));
 		Assertions.assertEquals(data.radioButton, radio.getText());
 		
-		WebElement multiSelect = driver.findElement(org.openqa.selenium.By.id("_valuemultipleselect0"));
+		WebElement multiSelect = driver.findElement(By.id("_valuemultipleselect0"));
 		Assertions.assertEquals(data.multiSelect, multiSelect.getText());
 		
-		WebElement dropDown = driver.findElement(org.openqa.selenium.By.id("_valuedropdown"));
+		WebElement dropDown = driver.findElement(By.id("_valuedropdown"));
 		Assertions.assertEquals(data.dropDown, dropDown.getText());
 		
-		WebElement fileName = driver.findElement(org.openqa.selenium.By.id("_valuefilename"));
+		WebElement fileName = driver.findElement(By.id("_valuefilename"));
 		Assertions.assertEquals(data.fileName, fileName.getText());
 	}
 	
 	private void fillUpForm() {
 		// username
-		WebElement username = driver.findElement(org.openqa.selenium.By.name("username"));
+		WebElement username = driver.findElement(By.name("username"));
 		username.sendKeys(data.username);
 		
 		// password
-		WebElement password = driver.findElement(org.openqa.selenium.By.name("password"));
+		WebElement password = driver.findElement(By.name("password"));
 		password.sendKeys(data.password);
 		
 		// comments
-		WebElement comments = driver.findElement(org.openqa.selenium.By.name("comments"));
+		WebElement comments = driver.findElement(By.name("comments"));
 		// delete all the text in the comments field
 		comments.clear();
 		// type in the comments
@@ -127,7 +127,7 @@ public class Task1Test {
 		file.sendKeys(absolutePath);
 		
 		// submit
-		WebElement submit = driver.findElement(org.openqa.selenium.By.cssSelector("input[type='submit']"));
+		WebElement submit = driver.findElement(By.cssSelector("input[type='submit']"));
 		submit.click();
 		
 		// wait for 3 seconds
